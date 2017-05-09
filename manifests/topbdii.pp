@@ -11,7 +11,6 @@ class bdii::topbdii inherits bdii::params {
       owner => 'root',
       group => 'root',
       mode => '644',
-      loglevel => err,
   }
 }
-  
+
