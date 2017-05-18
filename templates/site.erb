@@ -32,7 +32,9 @@ SITE_SUPPORT_EMAIL = <%= @sitesupportemail %>
 
 # Other info
 OTHERINFO = CONFIG=<%= @config %>
+<% if @egeeroc then -%>
 OTHERINFO = EGEE_ROC=<%= @egeeroc %>
+<% end -%>
 OTHERINFO = EGEE_SERVICE=<%= @egeeservice %>
 <% grid.each do |g| -%>
 OTHERINFO = GRID=<%= g %>
