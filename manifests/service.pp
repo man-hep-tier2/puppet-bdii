@@ -5,7 +5,12 @@ class bdii::service {
               enable     => true,
               hasstatus  => true,
               hasrestart => true,
-	      require    => Class["bdii::config"],
+              subscribe  => [
+                File['/etc/bdii/bdii.conf'],
+                File['/etc/sysconfig/bdii'],
+                File_line['slapd_threads'],
+                File_line['slapd_loglevel'],
+              ],
       }
 
-}     
+}
