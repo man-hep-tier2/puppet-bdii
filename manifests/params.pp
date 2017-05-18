@@ -1,5 +1,5 @@
 class bdii::params {
- 
+
   $log_level            = hiera("bdii::params::log_level","DEBUG")
   $port                 = hiera("bdii::params::port","2170")
   $user                 = hiera("bdii::params::user","ldap")
@@ -13,22 +13,23 @@ class bdii::params {
 
   # site specific stuff:
   $siteurls              =  hiera("bdii::params::siteurls","# DUMMY  ldap://localhost:2170/mds-vo-name=resource,o=grid")
-  $sitename              =  hiera("bdii::params::sitename","somesite")      
-  $sitebdiihost          =  hiera("bdii::params::sitebdiihost","somehost.example.com") 
-  $sitedesc              =  hiera("bdii::params::sitedesc","somesite descr") 
-  $siteweb               =  hiera("bdii::params::siteweb","www.somesite.example.com") 
-  $sitedistributed       =  hiera("bdii::params::sitedistributed","") 
-  $siteloc               =  hiera("bdii::params::siteloc","") 
-  $sitecountry           =  hiera("bdii::params::sitecountry","somecountry") 
-  $sitelat               =  hiera("bdii::params::sitelat","") 
-  $sitelong              =  hiera("bdii::params::sitelong","") 
-  $siteemail             =  hiera("bdii::params::siteemail","") 
-  $sitesecuritymail      =  hiera("bdii::params::sitesecuritymail","") 
-  $sitesupportemail      =  hiera("bdii::params::sitesupportemail","") 
+  $sitename              =  hiera("bdii::params::sitename","somesite")
+  $sitebdiihost          =  hiera("bdii::params::sitebdiihost","somehost.example.com")
+  $sitedesc              =  hiera("bdii::params::sitedesc","somesite descr")
+  $siteweb               =  hiera("bdii::params::siteweb","www.somesite.example.com")
+  $sitedistributed       =  hiera("bdii::params::sitedistributed","")
+  $siteloc               =  hiera("bdii::params::siteloc","")
+  $sitecountry           =  hiera("bdii::params::sitecountry","somecountry")
+  $sitelat               =  hiera("bdii::params::sitelat","")
+  $sitelong              =  hiera("bdii::params::sitelong","")
+  $siteemail             =  hiera("bdii::params::siteemail","")
+  $sitesecuritymail      =  hiera("bdii::params::sitesecuritymail","")
+  $sitesupportemail      =  hiera("bdii::params::sitesupportemail","")
   $config                =  hiera("bdii::params::config","puppet")
   $egeeroc               =  hiera("bdii::params::egeeroc","")
   $egeeservice           =  hiera("bdii::params::egeeservice","prod")
   $grid                  =  hiera("bdii::params::grid","")
   $wlcgtier              =  hiera("bdii::params::wlcgtier","")
   $otherinfo             = hiera("bdii::params::otherinfo",[]) #could be WLCG_PARENT=stuff
+  $enableipv6            = hiera("bdii::params::enableipv6", false)
 }

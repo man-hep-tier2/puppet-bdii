@@ -4,8 +4,11 @@ class bdii::config (
   $user         = $bdii::params::user,
   $slapdconf    = $bdii::params::slapdconf,
   $delete_delay = $bdii::params::bdiideletedelay,
-  $loglevel   = undef,
+  $loglevel     = undef,
+  $enableipv6   = $bdii::params::enableipv6,
 ) inherits bdii::params {
+
+      validate_bool($enableipv6)
 
       Class[bdii::install] -> Class[bdii::config]
 
@@ -39,7 +42,7 @@ class bdii::config (
         owner => 'root',
         group => 'root',
         mode => '0644',
-        loglevel => $loglevel,    
+        loglevel => $loglevel,
       }
 
       file_line{ 'slapd_threads':
