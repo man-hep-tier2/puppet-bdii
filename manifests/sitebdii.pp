@@ -19,7 +19,6 @@ class bdii::sitebdii(
   $grid                  =  $bdii::params::grid,
   $wlcgtier              =  $bdii::params::wlcgtier,
   $otherinfo             =  $bdii::params::otherinfo,
-  
 ) inherits bdii::params {
 
   Class[bdii::config] -> Class[bdii::sitebdii]
@@ -27,21 +26,18 @@ class bdii::sitebdii(
   package { emi-bdii-site:
           ensure => present,
       }
-  
+
   file {"/etc/glite-info-static/site/site.cfg":
       content => template('bdii/site.erb'),
       owner => 'root',
       group => 'root',
       mode => '644',
-      loglevel => err,
-
   }
   file {"/etc/bdii/gip/glite-info-site-defaults.conf":
       content => template('bdii/glite-info-site-defaults-site.erb'),
       owner => 'root',
       group => 'root',
       mode => '644',
-      loglevel => err,
   }
 
   file {"/etc/bdii/gip/site-urls.conf":
@@ -49,6 +45,5 @@ class bdii::sitebdii(
       owner => 'root',
       group => 'root',
       mode => '644',
-      loglevel => err,  
   }
 }
