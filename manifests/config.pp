@@ -3,7 +3,7 @@ class bdii::config (
   $port         = $bdii::port,
   $user         = $bdii::user,
   $slapdconf    = $bdii::slapdconf,
-  $delete_delay = $bdii::bdiideletedelay,
+  $delete_delay = $bdii::delete_delay,
   $loglevel     = undef,
   $enableipv6   = $bdii::enableipv6,
 ) inherits bdii {
