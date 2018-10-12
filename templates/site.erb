@@ -36,7 +36,7 @@ OTHERINFO = CONFIG=<%= @config %>
 OTHERINFO = EGEE_ROC=<%= @egeeroc %>
 <% end -%>
 OTHERINFO = EGEE_SERVICE=<%= @egeeservice %>
-<% grid.each do |g| -%>
+<% @grid.each do |g| -%>
 OTHERINFO = GRID=<%= g %>
 <% end -%>
 OTHERINFO = WLCG_TIER=<%= @wlcgtier %>
