@@ -21,29 +21,29 @@ class bdii::sitebdii(
   $otherinfo             =  $bdii::params::otherinfo,
 ) inherits bdii::params {
 
-  Class[bdii::config] -> Class[bdii::sitebdii]
+  Class['bdii::config'] -> Class['bdii::sitebdii']
 
-  package { emi-bdii-site:
-          ensure => present,
+  package { 'emi-bdii-site':
+          ensure => 'present',
       }
 
   file {"/etc/glite-info-static/site/site.cfg":
       content => template('bdii/site.erb'),
-      owner => 'root',
-      group => 'root',
-      mode => '644',
+      owner   => 'root',
+      group   => 'root',
+      mode    => '644',
   }
-  file {"/etc/bdii/gip/glite-info-site-defaults.conf":
+  file {'/etc/bdii/gip/glite-info-site-defaults.conf':
       content => template('bdii/glite-info-site-defaults-site.erb'),
-      owner => 'root',
-      group => 'root',
-      mode => '644',
+      owner   => 'root',
+      group   => 'root',
+      mode    => '644',
   }
 
-  file {"/etc/bdii/gip/site-urls.conf":
+  file {'/etc/bdii/gip/site-urls.conf':
       content => template('bdii/site_urls.erb'),
-      owner => 'root',
-      group => 'root',
-      mode => '644',
+      owner   => 'root',
+      group   => 'root',
+      mode    => '644',
   }
 }
