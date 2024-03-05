@@ -9,7 +9,7 @@ class bdii (
   $enableipv6   = $bdii::params::enableipv6,
 ) inherits bdii::params {
 
-  case $::operatingsystem {
+  case $facts['os']['name'] {
     'RedHat','SLC','SL','Scientific','CentOS':   {
       include ::bdii::install
       include ::bdii::service
