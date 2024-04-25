@@ -23,9 +23,17 @@ class bdii::sitebdii(
 
   Class['bdii::config'] -> Class['bdii::sitebdii']
 
-  package { 'emi-bdii-site':
+  if Integer($facts['os']['release']['major']) < 8 {
+    package { 'emi-bdii-site':
           ensure => 'present',
       }
+  } else {
+    # this should pull in the same dependencies as the above packages, except the glue-validator
+    # only need to add lsb_release and a number of perl modules which are not added as dependencies to the rpms
+    package { ['bdii-config-site', 'lsb_release', 'perl-libwww-perl', 'perl-File-Copy']:
+      ensure => 'present',
+    }
+  }
 
   file {"/etc/glite-info-static/site/site.cfg":
       content => template('bdii/site.erb'),
