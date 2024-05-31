@@ -5,10 +5,8 @@ class bdii::config (
   $slapdconf    = $bdii::slapdconf,
   $delete_delay = $bdii::delete_delay,
   $loglevel     = undef,
-  $enableipv6   = $bdii::enableipv6,
+  Boolean $enableipv6   = $bdii::enableipv6,
 ) inherits bdii {
-
-      validate_bool($enableipv6)
 
       Class[bdii::install] -> Class[bdii::config]
 
