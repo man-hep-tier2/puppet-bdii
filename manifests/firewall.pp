@@ -1,15 +1,15 @@
 class bdii::firewall {
 
   firewall { '101 allow bdii':
-    proto  => 'tcp',
-    dport  => '2170',
-    action => 'accept',
+    proto => 'tcp',
+    dport => '2170',
+    jump  => 'accept',
   }
 
   firewall { '101 allow bdii ipv6':
     proto    => 'tcp',
     dport    => '2170',
-    action   => 'accept',
-    provider => 'ip6tables',
+    jump     => 'accept',
+    protocol => 'ip6tables',
   }
 }
